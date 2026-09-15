@@ -8,12 +8,18 @@
 set -euo pipefail
 
 APP_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-SERVICE="celiscollege"
+APP="celiscollege"
+PORT=3002
 
 cd "$APP_DIR"
 
+# devDependencies are required to BUILD: next.config.ts is TypeScript, so the
+# build needs `typescript` and the @types packages. `--omit=dev` here makes the
+# build fail with "Cannot find module 'typescript'". The standalone bundle that
+# gets deployed contains only traced production dependencies either way, so
+# installing dev dependencies costs nothing at runtime.
 echo "==> Installing dependencies"
-npm ci --omit=dev --no-audit --no-fund || npm install --no-audit --no-fund
+npm ci --no-audit --no-fund || npm install --no-audit --no-fund
 
 echo "==> Building"
 npm run build
@@ -25,13 +31,23 @@ cp -r public .next/standalone/public
 mkdir -p .next/standalone/.next
 cp -r .next/static .next/standalone/.next/static
 
-# Enquiry submissions are appended here; keep it writable by the service user.
+# server.js chdirs to its own directory, so the app writes enquiries to
+# .next/standalone/data - which the build above wipes. Point it at a directory
+# that survives deploys.
+echo "==> Linking the persistent data directory"
 mkdir -p data
-chown -R www-data:www-data "$APP_DIR/data" 2>/dev/null || true
+rm -rf .next/standalone/data
+ln -sfn "$APP_DIR/data" .next/standalone/data
 
-echo "==> Restarting $SERVICE"
-sudo systemctl restart "$SERVICE"
+echo "==> Restarting $APP"
+cd "$APP_DIR/.next/standalone"
+if pm2 describe "$APP" >/dev/null 2>&1; then
+    PORT=$PORT HOSTNAME=127.0.0.1 NODE_ENV=production pm2 restart "$APP" --update-env
+else
+    PORT=$PORT HOSTNAME=127.0.0.1 NODE_ENV=production pm2 start server.js --name "$APP"
+fi
+pm2 save
 sleep 2
-sudo systemctl --no-pager --lines=10 status "$SERVICE"
+pm2 describe "$APP" | head -20
 
 echo "==> Done. https://celiscollege.lk"

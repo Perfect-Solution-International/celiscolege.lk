@@ -1,10 +1,11 @@
 # systemd unit for the Next.js server.
 #
+# NOT IN USE on the current VPS - that host runs the app under pm2 (see
+# deploy/deploy.sh). This unit is kept for hosts that prefer systemd:
+#
 #   sudo cp deploy/celiscollege.service /etc/systemd/system/
 #   sudo systemctl daemon-reload
 #   sudo systemctl enable --now celiscollege
-#
-# Logs:  journalctl -u celiscollege -f
 
 [Unit]
 Description=CELIS College website (Next.js)
@@ -20,7 +21,7 @@ WorkingDirectory=/var/www/celiscollege.lk
 ExecStart=/usr/bin/node .next/standalone/server.js
 
 Environment=NODE_ENV=production
-Environment=PORT=3000
+Environment=PORT=3002
 Environment=HOSTNAME=127.0.0.1
 # Secrets (SMTP credentials, site URL) live here, not in this unit file.
 EnvironmentFile=-/var/www/celiscollege.lk/.env

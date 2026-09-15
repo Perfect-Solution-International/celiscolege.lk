@@ -109,23 +109,28 @@ field, rate-limits to 5 per IP per 10 minutes, and appends every enquiry to
 
 `data/submissions.jsonl` is gitignored and must be writable by the service user.
 
+The standalone `server.js` chdirs into `.next/standalone`, which `npm run build`
+wipes, so `deploy.sh` symlinks `.next/standalone/data` to the project's `data/`
+directory. Enquiries therefore survive deploys.
+
 ## Deploying to the Debian VPS
+
+The site runs on the VPS as a **pm2** process named `celiscollege`, listening on
+`127.0.0.1:3002`, with nginx terminating TLS and proxying to it. (pm2 is what the
+other sites on this host use; `deploy/celiscollege.service` is a systemd unit for
+hosts that prefer systemd instead — it is not in use here.)
 
 One-time setup, as root:
 
 ```bash
-# Node 22 (Debian's own package is too old for Next.js 15)
 curl -fsSL https://deb.nodesource.com/setup_22.x | bash -
 apt install -y nodejs nginx
-npm i -g npm
+npm i -g npm pm2
 
 mkdir -p /var/www/celiscollege.lk
 # copy or git clone the project into that directory
 cd /var/www/celiscollege.lk
 cp .env.example .env && nano .env      # set the site URL and SMTP details
-
-cp deploy/celiscollege.service /etc/systemd/system/
-systemctl daemon-reload
 
 cp deploy/nginx.conf /etc/nginx/sites-available/celiscollege.lk
 ln -s /etc/nginx/sites-available/celiscollege.lk /etc/nginx/sites-enabled/
@@ -133,6 +138,8 @@ nginx -t && systemctl reload nginx
 
 apt install -y certbot python3-certbot-nginx
 certbot --nginx -d celiscollege.lk -d www.celiscollege.lk
+
+pm2 startup        # so the app comes back after a reboot
 ```
 
 Then, for the first deploy and every one after:
@@ -143,16 +150,18 @@ chmod +x deploy/deploy.sh
 ./deploy/deploy.sh
 ```
 
-`deploy.sh` installs, builds, assembles the standalone bundle and restarts the
-service. Logs: `journalctl -u celiscollege -f`.
+`deploy.sh` installs, builds, assembles the standalone bundle, links the data
+directory and restarts the pm2 process. Logs: `pm2 logs celiscollege`.
+Status: `pm2 list`.
 
 Point the DNS `A` record for `celiscollege.lk` (and `www`) at the VPS before
 running certbot, or certificate issuance will fail.
 
 ## Notes
 
-- The app listens on `127.0.0.1:3000` only; nginx terminates TLS and proxies to
-  it. Do not expose port 3000 publicly.
+- The app listens on `127.0.0.1:3002` only; nginx terminates TLS and proxies to
+  it. Do not expose port 3002 publicly. (3000 and 3001 are taken by the other
+  sites on this host.)
 - `next.config.ts` sets the security headers (HSTS, nosniff, frame options) and
   `output: "standalone"` for a small deploy bundle.
 - Content changes require a rebuild (`./deploy/deploy.sh`) because the pages are
