@@ -1,0 +1,40 @@
+# systemd unit for the Next.js server.
+#
+#   sudo cp deploy/celiscollege.service /etc/systemd/system/
+#   sudo systemctl daemon-reload
+#   sudo systemctl enable --now celiscollege
+#
+# Logs:  journalctl -u celiscollege -f
+
+[Unit]
+Description=CELIS College website (Next.js)
+After=network.target
+
+[Service]
+Type=simple
+User=www-data
+Group=www-data
+WorkingDirectory=/var/www/celiscollege.lk
+
+# `output: "standalone"` in next.config.ts produces this server bundle.
+ExecStart=/usr/bin/node .next/standalone/server.js
+
+Environment=NODE_ENV=production
+Environment=PORT=3000
+Environment=HOSTNAME=127.0.0.1
+# Secrets (SMTP credentials, site URL) live here, not in this unit file.
+EnvironmentFile=-/var/www/celiscollege.lk/.env
+
+Restart=always
+RestartSec=5
+KillSignal=SIGINT
+
+# Hardening - the app only needs to write to data/ for enquiry submissions.
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ProtectHome=true
+ReadWritePaths=/var/www/celiscollege.lk/data
+
+[Install]
+WantedBy=multi-user.target

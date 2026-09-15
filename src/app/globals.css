@@ -1,0 +1,150 @@
+@import "tailwindcss";
+
+/**
+ * Design tokens. The whole site is built from these - change a value here and
+ * every section follows. Colours are the CELIS palette: deep navy for text,
+ * a single brand blue for emphasis, and a very light blue ground that the
+ * glass cards sit on.
+ */
+@theme {
+  --color-ink: #0a2a5e;
+  --color-ink-soft: #16407f;
+  --color-body: #47617f;
+  --color-muted: #7590ae;
+
+  --color-brand: #1668d8;
+  --color-brand-dark: #0d4da8;
+  --color-brand-light: #55a0f5;
+
+  --color-surface: #ffffff;
+  --color-surface-tint: #f2f8fe;
+  --color-surface-blue: #e3f0fd;
+  --color-line: #d8e8f8;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-serif), ui-serif, Georgia, serif;
+
+  --radius-card: 1.5rem;
+  --radius-panel: 2rem;
+
+  --shadow-glass: 0 20px 45px -25px rgba(10, 42, 94, 0.35);
+  --shadow-panel: 0 30px 70px -40px rgba(10, 42, 94, 0.45);
+  --shadow-pill: 0 12px 30px -12px rgba(22, 104, 216, 0.45);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* The sticky header is ~5.5rem tall; keep anchor targets clear of it. */
+    scroll-padding-top: 7rem;
+  }
+
+  body {
+    background-color: var(--color-surface-tint);
+    color: var(--color-body);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    color: var(--color-ink);
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: -0.015em;
+  }
+
+  ::selection {
+    background: var(--color-brand);
+    color: #fff;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-brand);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+}
+
+@layer components {
+  /* The soft blue ground the whole page sits on, with two light blooms. */
+  .page-ground {
+    background:
+      radial-gradient(
+        60rem 40rem at 85% -10%,
+        rgba(85, 160, 245, 0.18),
+        transparent 60%
+      ),
+      radial-gradient(
+        50rem 35rem at 5% 20%,
+        rgba(160, 205, 250, 0.22),
+        transparent 65%
+      ),
+      linear-gradient(180deg, #f6fbff 0%, #eaf4fe 45%, #f4f9ff 100%);
+  }
+
+  /* Frosted card used for nav, stat pills and feature cards. */
+  .glass {
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(16px);
+    box-shadow: var(--shadow-glass);
+  }
+
+  .glass-strong {
+    background: rgba(255, 255, 255, 0.88);
+    border: 1px solid rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    box-shadow: var(--shadow-glass);
+  }
+
+  /* Large rounded section container, the stacked-panel look of the design. */
+  .panel {
+    border-radius: var(--radius-panel);
+    background: linear-gradient(
+      160deg,
+      rgba(255, 255, 255, 0.95) 0%,
+      rgba(238, 246, 255, 0.9) 100%
+    );
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    box-shadow: var(--shadow-panel);
+  }
+
+  .eyebrow {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-brand);
+  }
+
+  /* Horizontal instrument rail: scrollable, but without a visible scrollbar. */
+  .rail {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    scroll-snap-type: x mandatory;
+  }
+
+  .rail::-webkit-scrollbar {
+    display: none;
+  }
+
+  .rail > * {
+    scroll-snap-align: start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
