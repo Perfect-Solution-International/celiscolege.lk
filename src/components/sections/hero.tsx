@@ -15,7 +15,7 @@ export function Hero() {
         <div className="grid lg:h-[35rem] lg:grid-cols-[1.02fr_0.98fr]">
           <div className="order-2 relative flex items-center lg:order-1">
             <div aria-hidden className="absolute -left-24 -top-24 h-80 w-80 rounded-full bg-brand/30 blur-3xl" />
-            <Container className="relative py-9 sm:py-12 lg:pr-8 xl:pr-12">
+            <Container className="relative py-7 sm:py-12 lg:pr-8 xl:pr-12">
               <div className="max-w-2xl">
                 <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2">
                   <span className="h-2 w-2 rounded-full bg-sky-300" />
@@ -24,18 +24,18 @@ export function Hero() {
                   </p>
                 </div>
 
-                <h1 className="mt-5 font-display text-[2.45rem] leading-[1.01] tracking-[-0.025em] text-white text-balance sm:text-5xl lg:text-[3.45rem]">
+                <h1 className="mt-4 font-display text-[2.1rem] leading-[1.02] tracking-[-0.025em] text-white text-balance sm:mt-5 sm:text-5xl lg:text-[3.45rem]">
                   {hero.title}{" "}
                   <span className="text-sky-300">{hero.titleAccent}</span>
                 </h1>
-                <p className="mt-5 font-display text-lg text-white sm:text-xl">
+                <p className="mt-4 font-display text-lg text-white sm:mt-5 sm:text-xl">
                   {hero.subtitle}
                 </p>
                 <p className="mt-3 max-w-xl text-sm leading-6 text-blue-100/75">
                   {hero.body}
                 </p>
 
-                <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+                <div className="mt-5 flex flex-col gap-2.5 sm:mt-7 sm:flex-row sm:gap-3">
                   <Button href={hero.primaryCta.href} className="justify-center bg-white text-ink shadow-xl hover:bg-sky-100">
                     {hero.primaryCta.label}
                   </Button>
@@ -44,7 +44,7 @@ export function Hero() {
                   </Button>
                 </div>
 
-                <ul className="mt-7 flex flex-wrap gap-x-5 gap-y-2">
+                <ul className="mt-5 hidden flex-wrap gap-x-5 gap-y-2 sm:mt-7 sm:flex">
                   {highlights.map((item) => (
                     <li key={item} className="flex items-center gap-2 text-[0.7rem] text-blue-100/70">
                       <span className="h-1.5 w-1.5 rounded-full bg-sky-300" />
@@ -56,7 +56,7 @@ export function Hero() {
             </Container>
           </div>
 
-          <div className="order-1 relative h-64 sm:h-80 lg:order-2 lg:h-full">
+          <div className="order-1 relative h-44 sm:h-80 lg:order-2 lg:h-full">
             <Media
               src={hero.image}
               alt={hero.imageAlt}
@@ -65,7 +65,7 @@ export function Hero() {
               className="absolute inset-0"
             />
             <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-[#061a3d]/35 via-transparent to-transparent lg:bg-gradient-to-r lg:from-[#061a3d]/35 lg:to-transparent" />
-            <div className="absolute bottom-4 right-4 rounded-xl border border-white/20 bg-[#061a3d]/75 px-4 py-3 text-white shadow-xl backdrop-blur-md sm:bottom-6 sm:right-6">
+            <div className="absolute bottom-3 right-3 rounded-xl border border-white/20 bg-[#061a3d]/75 px-3 py-2.5 text-white shadow-xl backdrop-blur-md sm:bottom-6 sm:right-6 sm:px-4 sm:py-3">
               <p className="text-sm font-semibold">Professional pathway</p>
               <p className="mt-1 text-[0.65rem] text-sky-200">Learn · Practice · Build</p>
             </div>

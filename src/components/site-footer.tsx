@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import { ArrowRightIcon, MailIcon, PhoneIcon, PinIcon } from "@/components/icons";
@@ -99,9 +100,25 @@ export function SiteFooter() {
             </FooterColumn>
           </div>
 
-          <div className="flex flex-col gap-3 border-t border-white/10 pt-6 text-xs text-blue-100/45 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex flex-col gap-4 border-t border-white/10 pt-6 text-xs text-blue-100/45 sm:flex-row sm:items-center sm:justify-between">
             <p>© {new Date().getFullYear()} {site.name}. All Rights Reserved.</p>
             <p className="uppercase tracking-[0.18em]">{site.motto}</p>
+            <a
+              href="https://perfectsolutioninternational.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-2.5 transition-colors hover:text-white"
+            >
+              <span className="whitespace-nowrap">Developed by</span>
+              <Image
+                src="/perfect-solution-international-logo.webp"
+                alt="Perfect Solution International"
+                width={2000}
+                height={503}
+                sizes="150px"
+                className="h-6 w-auto object-contain opacity-85 transition-opacity group-hover:opacity-100 sm:h-7"
+              />
+            </a>
           </div>
         </Container>
       </div>
