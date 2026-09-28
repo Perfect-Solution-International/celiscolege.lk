@@ -17,26 +17,26 @@ export const experienceIntro = {
 };
 
 /**
- * Photographs of the instrument training room.
+ * Photographs from the CELIS College training room.
  *
- * TO ENABLE: save the client's photos in `public/images/` using the file names
- * in each comment below, then replace the empty string with that path.
- * While a path is empty the card shows a gradient placeholder, not a break.
+ * TO SWAP A PHOTO: save the new file in `public/images/` and point the `image`
+ * field at it. While a path is empty the card shows a gradient placeholder,
+ * not a break.
  */
 export const gallery = [
   {
-    image: "/images/celis-analyzer-bench.jpg",
-    alt: "Clinical chemistry and immunoassay analyzers set up along the training bench",
-    caption: "Analyzers set up as working service benches",
+    image: "/images/celis-lecture-instrument-room.jpg",
+    alt: "A CELIS College lecturer teaching a class in the training room, with laboratory analyzers along the back wall",
+    caption: "Classes run in the instrument room, beside the analyzers",
   },
   {
-    image: "/images/celis-training-lab.jpg",
-    alt: "The CELIS College instrument training room with service tools laid out",
-    caption: "Service tools laid out for practical sessions",
+    image: "/images/celis-medical-devices-lecture.jpg",
+    alt: "A lecturer presenting a slide that maps medical devices across equipment, consumables, implants, software, and in-vitro diagnostics",
+    caption: "Mapping the medical device landscape from the ground up",
   },
   {
-    image: "/images/celis-instrument-room.jpg",
-    alt: "Racks of medical laboratory instruments in the CELIS College training room",
-    caption: "A range of instruments available for training",
+    image: "/images/celis-classroom-session.jpg",
+    alt: "Students seated in the CELIS College classroom during a session led by an instructor",
+    caption: "Small groups, so every learner can ask and practise",
   },
 ] as const;
