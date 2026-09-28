@@ -32,8 +32,8 @@ export default function ContactPage() {
       <PageHero
         eyebrow="Contact & Apply"
         title="Start your path in healthcare technology."
-        image="/images/unsplash-home-hero.jpg"
-        imageAlt="Laboratory professional working with technical equipment in a modern facility"
+        image="/images/celis-lab-discussion.jpg"
+        imageAlt="CELIS College staff and visitors talking in the instrument training room"
         highlights={["Program applications", "Course information", "Eligibility guidance"]}
         primaryCta={{ href: "#enquiry", label: "Apply or send an enquiry" }}
         body={<p>Ask about the Service Professional Program, entry requirements, learning pathway, certification, or what the practical training covers. Our team is ready to guide your next step.</p>}

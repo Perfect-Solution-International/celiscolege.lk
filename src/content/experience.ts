@@ -31,7 +31,7 @@ export const gallery = [
   },
   {
     image: "/images/celis-medical-devices-lecture.jpg",
-    alt: "A lecturer presenting a slide that maps medical devices across equipment, consumables, implants, software, and in-vitro diagnostics",
+    alt: "A lecturer presenting a slide on medical equipment classification during a CELIS College session",
     caption: "Mapping the medical device landscape from the ground up",
   },
   {

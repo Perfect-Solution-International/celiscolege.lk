@@ -21,8 +21,8 @@ export const instruments: Instrument[] = [
     name: "Hematology Analyzers",
     summary:
       "Automated blood cell counting systems, and one of the highest-volume instruments in a clinical laboratory.",
-    image: "/images/unsplash-clinical-laboratory.jpg",
-    imageAlt: "Laboratory professional examining a sample through a microscope",
+    image: "/images/celis-hematology-analyzer.jpg",
+    imageAlt: "A Mindray BC-2300 hematology analyzer on the CELIS College training bench",
     accent: "from-sky-400 to-blue-600",
   },
   {
@@ -30,8 +30,8 @@ export const instruments: Instrument[] = [
     name: "Clinical Chemistry Analyzers",
     summary:
       "Photometric systems that measure enzymes, metabolites and other analytes in serum and plasma.",
-    image: "/images/unsplash-medical-lab.jpg",
-    imageAlt: "Laboratory sample tray being processed with a precision pipette",
+    image: "/images/celis-chemistry-analyzer.jpg",
+    imageAlt: "A CELIS College lecturer explaining a clinical chemistry analyzer to the class",
     accent: "from-cyan-400 to-sky-600",
   },
   {
@@ -39,8 +39,8 @@ export const instruments: Instrument[] = [
     name: "Immunoassay Analyzers",
     summary:
       "Platforms used for hormone, marker and infectious disease testing through immunoassay techniques.",
-    image: "/images/unsplash-biomedical-engineering.jpg",
-    imageAlt: "Engineer inspecting a precision technology system",
+    image: "/images/celis-immunoassay-bench.jpg",
+    imageAlt: "Analyzers and service workstations along the CELIS College training bench",
     accent: "from-indigo-400 to-blue-700",
   },
   {
@@ -48,8 +48,8 @@ export const instruments: Instrument[] = [
     name: "Electrolyte Analyzers",
     summary:
       "Ion-selective electrode systems that measure sodium, potassium, chloride and related electrolytes.",
-    image: "/images/unsplash-electronics-repair.jpg",
-    imageAlt: "Technician holding an electronic circuit board during repair",
+    image: "/images/celis-electrolyte-analyzer.jpg",
+    imageAlt: "A Miura One ISE analyzer in the CELIS College training room",
     accent: "from-blue-400 to-indigo-600",
   },
   {
@@ -57,8 +57,8 @@ export const instruments: Instrument[] = [
     name: "Laboratory Centrifuges",
     summary:
       "Sample separation equipment built around rotor balance, drive systems and safety interlocks.",
-    image: "/images/unsplash-technical-training.jpg",
-    imageAlt: "Technology concept showing the connection between people and engineering",
+    image: "/images/celis-sample-prep-bench.jpg",
+    imageAlt: "Sample preparation equipment and test instruments on the CELIS College bench",
     accent: "from-teal-400 to-cyan-600",
   },
   {
@@ -66,8 +66,8 @@ export const instruments: Instrument[] = [
     name: "Microscopy Systems",
     summary:
       "Clinical microscopes and their illumination, optical and digital imaging subsystems.",
-    image: "/images/unsplash-lab-equipment.jpg",
-    imageAlt: "Clinical microscopes arranged on a laboratory bench",
+    image: "/images/celis-microscopes.jpg",
+    imageAlt: "Clinical microscopes on the instrument rack in the CELIS College training room",
     accent: "from-sky-500 to-indigo-600",
   },
   {
@@ -84,8 +84,8 @@ export const instruments: Instrument[] = [
     name: "Other Medical Laboratory Instruments",
     summary:
       "Additional instruments found across diagnostic laboratories, added to the program as it grows.",
-    image: "/images/unsplash-microscope.jpg",
-    imageAlt: "Laboratory instruments and a microscope in a modern clinical laboratory",
+    image: "/images/celis-instrument-rack.jpg",
+    imageAlt: "Instrument racks holding laboratory equipment in the CELIS College training room",
     accent: "from-indigo-400 to-sky-600",
   },
 ];

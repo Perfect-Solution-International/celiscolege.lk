@@ -47,7 +47,7 @@ export const purpose = {
   ],
   image: "/images/celis-instrument-room.jpg",
   imageAlt:
-    "Analyzers set up on the service training bench at CELIS College, Panadura",
+    "Laboratory instruments on the racks of the CELIS College training room in Panadura",
 };
 
 export const whatWeDo = {

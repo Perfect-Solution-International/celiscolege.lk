@@ -20,9 +20,9 @@ export const hero = {
   overlayWords: ["Precision", "People", "Better Healthcare"],
   /** Vertical label at the top right of the hero. */
   sideLabel: "Medical technology education for a brighter tomorrow",
-  image: "/images/unsplash-home-hero-alt.jpg",
+  image: "/images/celis-hero-analyzer-lecture.jpg",
   imageAlt:
-    "Medical laboratory professional working with modern automated analyzers",
+    "A CELIS College lecturer explaining a clinical chemistry analyzer during a training session",
 };
 
 /** The four pills directly under the hero. */
