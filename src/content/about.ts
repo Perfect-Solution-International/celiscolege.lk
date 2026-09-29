@@ -64,6 +64,8 @@ export const whatWeDo = {
   ],
   closing:
     "Our programs are designed to connect fundamental engineering principles with real healthcare applications, helping learners understand both the technology and the service environment in which it operates.",
+  /** Decorative, washed-out photo behind the section. */
+  background: "/images/stock-bg-circuit-board.jpg",
 };
 
 export const vision = {
@@ -73,7 +75,13 @@ export const vision = {
     "We aspire to contribute to the development of a strong and professional Biomedical Engineering ecosystem in Sri Lanka, where skilled professionals, quality education, practical training, and healthcare technology come together to support better healthcare delivery.",
     "As CELIS College grows, we envision developing into a leading institution for Biomedical Engineering education and professional development, while creating opportunities for learners to continuously learn, practice, and build their careers.",
   ],
+  image: "/images/stock-operating-room.jpg",
+  imageAlt:
+    "Modern hospital operating room with a surgical light, operating table and equipment cabinets",
 };
+
+/** Decorative, washed-out photo behind the "Our Commitment" section. */
+export const commitmentsBackground = "/images/stock-bg-hospital-corridor.jpg";
 
 /** "Our Commitment" - the five things the college commits to. */
 export const commitments = [
@@ -111,4 +119,6 @@ export const future = {
     "Our journey is only beginning.",
     "Through education, practical training, professional collaboration, and continuous innovation, CELIS College aims to play a meaningful role in developing the next generation of Biomedical Engineering Service Professionals and strengthening healthcare technology capabilities in Sri Lanka.",
   ],
+  image: "/images/stock-ecg-monitor.jpg",
+  imageAlt: "Cardiac monitor displaying a live ECG trace in a hospital room",
 };

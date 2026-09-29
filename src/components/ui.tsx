@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { ComponentPropsWithoutRef, ReactNode } from "react";
 
@@ -26,14 +27,38 @@ export function Panel({
   className,
   children,
   id,
+  background,
 }: {
   className?: string;
   children: ReactNode;
   id?: string;
+  /** Decorative photo behind the panel, washed out so text stays readable. */
+  background?: string;
 }) {
   return (
     <section id={id} className="px-3 py-3 sm:px-4 sm:py-4">
-      <div className={cn("panel overflow-hidden px-5 py-14 sm:px-8 lg:px-12", className)}>
+      <div
+        className={cn(
+          "panel overflow-hidden px-5 py-14 sm:px-8 lg:px-12",
+          background && "relative isolate",
+          className,
+        )}
+      >
+        {background ? (
+          <>
+            <Image
+              src={background}
+              alt=""
+              fill
+              sizes="100vw"
+              className="-z-20 object-cover"
+            />
+            <div
+              aria-hidden
+              className="absolute inset-0 -z-10 bg-gradient-to-br from-white/90 via-white/80 to-surface-blue/70"
+            />
+          </>
+        ) : null}
         {children}
       </div>
     </section>

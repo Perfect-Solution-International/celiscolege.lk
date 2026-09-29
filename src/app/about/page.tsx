@@ -10,6 +10,7 @@ import { Button, Container, Eyebrow, Panel, SectionHeading } from "@/components/
 import {
   aboutLead,
   commitments,
+  commitmentsBackground,
   future,
   purpose,
   vision,
@@ -69,7 +70,7 @@ export default function AboutPage() {
         </Container>
       </Panel>
 
-      <Panel>
+      <Panel background={whatWeDo.background}>
         <Container className="px-0 sm:px-0 lg:px-0">
           <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] lg:gap-14">
             <div>
@@ -97,23 +98,34 @@ export default function AboutPage() {
 
       <Panel>
         <Container className="px-0 sm:px-0 lg:px-0">
-          <div className="mx-auto max-w-3xl text-center">
-            <Eyebrow>Looking ahead</Eyebrow>
-            <h2 className="mt-3 text-3xl leading-tight text-balance sm:text-4xl">
-              {vision.title}
-            </h2>
-            <div className="mt-6 space-y-4">
-              {vision.paragraphs.map((paragraph) => (
-                <p key={paragraph} className="text-base leading-relaxed text-body">
-                  {paragraph}
-                </p>
-              ))}
+          <div className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-14">
+            <div>
+              <Eyebrow>Looking ahead</Eyebrow>
+              <h2 className="mt-3 text-3xl leading-tight text-balance sm:text-4xl">
+                {vision.title}
+              </h2>
+              <div className="mt-6 space-y-4">
+                {vision.paragraphs.map((paragraph) => (
+                  <p key={paragraph} className="text-base leading-relaxed text-body">
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
             </div>
+
+            {/* Image sits left on desktop so the page alternates sides. */}
+            <Media
+              src={vision.image}
+              alt={vision.imageAlt}
+              accent="from-sky-200 via-blue-100 to-indigo-200"
+              className="aspect-[4/3] w-full rounded-[var(--radius-card)] shadow-[var(--shadow-glass)] lg:order-first"
+              sizes="(min-width: 1024px) 45vw, 100vw"
+            />
           </div>
         </Container>
       </Panel>
 
-      <Panel>
+      <Panel background={commitmentsBackground}>
         <Container className="px-0 sm:px-0 lg:px-0">
           <SectionHeading
             eyebrow="Our Commitment"
@@ -144,24 +156,37 @@ export default function AboutPage() {
 
       <Panel>
         <Container className="px-0 sm:px-0 lg:px-0">
-          <div className="mx-auto max-w-3xl">
-            <SectionHeading eyebrow="Our journey" title={future.title} />
-            <div className="mt-6 space-y-4">
-              {future.paragraphs.map((paragraph) => (
-                <p key={paragraph} className="text-base leading-relaxed text-body">
-                  {paragraph}
-                </p>
-              ))}
+          <div className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-14">
+            <div>
+              <SectionHeading eyebrow="Our journey" title={future.title} />
+              <div className="mt-6 space-y-4">
+                {future.paragraphs.map((paragraph) => (
+                  <p key={paragraph} className="text-base leading-relaxed text-body">
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+              <p className="mt-8 font-display text-xl text-ink">{site.tagline}</p>
+              <p className="mt-2 text-sm text-body">
+                {site.name} — {site.strapline}
+              </p>
             </div>
-            <p className="mt-8 font-display text-xl text-ink">{site.tagline}</p>
-            <p className="mt-2 text-sm text-body">
-              {site.name} — {site.strapline}
-            </p>
+
+            <Media
+              src={future.image}
+              alt={future.imageAlt}
+              accent="from-slate-200 via-sky-100 to-blue-200"
+              className="aspect-[4/3] w-full rounded-[var(--radius-card)] shadow-[var(--shadow-glass)]"
+              sizes="(min-width: 1024px) 45vw, 100vw"
+            />
           </div>
         </Container>
       </Panel>
 
-      <Ecosystem />
+      <Ecosystem
+        image="/images/celis-instrument-rack.jpg"
+        imageAlt="Instrument racks holding laboratory equipment in the CELIS College training room"
+      />
       <JsonLd data={breadcrumbSchema([{ name: "About Us", path: "/about" }])} />
     </>
   );

@@ -27,8 +27,20 @@ export function Media({
   sizes?: string;
   children?: React.ReactNode;
 }) {
+  // Tailwind's compiled CSS always resolves `relative` after `absolute`, so
+  // forcing "relative" here would silently collapse callers that pass
+  // "absolute inset-0" to make this fill a positioned parent.
+  const hasPositionClass = /(?:^|\s)(absolute|fixed|sticky|static)(?:\s|$)/.test(
+    className ?? "",
+  );
+
   return (
-    <div className={cn("relative overflow-hidden bg-surface-blue", className)}>
+    <div
+      className={cn(
+        hasPositionClass ? "overflow-hidden bg-surface-blue" : "relative overflow-hidden bg-surface-blue",
+        className,
+      )}
+    >
       {src ? (
         <Image
           src={src}

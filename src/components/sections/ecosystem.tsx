@@ -6,13 +6,16 @@ import { ArrowBadge, Button, Container, EdgeLabel } from "@/components/ui";
 import { ecosystem } from "@/content/home";
 
 /** Full-bleed mission section with the stats bar sitting over the image. */
-export function Ecosystem() {
+export function Ecosystem({
+  image = ecosystem.image,
+  imageAlt = ecosystem.imageAlt,
+}: { image?: string; imageAlt?: string } = {}) {
   return (
     <section className="px-3 py-3 sm:px-4 sm:py-4">
       <div className="relative overflow-hidden rounded-[var(--radius-panel)] shadow-[var(--shadow-panel)]">
         <Media
-          src={ecosystem.image}
-          alt={ecosystem.imageAlt}
+          src={image}
+          alt={imageAlt}
           sizes="100vw"
           accent="from-slate-200 via-sky-100 to-blue-200"
           className="absolute inset-0"

@@ -36,3 +36,23 @@ Instrument cards (1440x1080, 4:3) - used by src/content/instruments.ts
 
 Landscape, 1600x1000 or larger. Next.js resizes and converts to WebP/AVIF.
 Keep the alt text honest: it describes what is actually in the frame.
+
+Stock photos (Pixabay Content License - free commercial use, no attribution
+required). NOT CELIS photos; swap for real ones when available. Prefixed
+"stock-" so they are easy to spot. Pixabay serves 1280px without a login.
+
+  stock-operating-room.jpg         - hospital operating room, no people
+                                     pixabay.com/photos/operating-room-hospital-clean-or-5979687/
+                                     used by: about.ts (vision)
+  stock-ecg-monitor.jpg            - Ivy Biomedical cardiac trigger monitor, ECG trace
+                                     pixabay.com/photos/equipment-hospital-ecg-3089883/
+                                     used by: about.ts (future)
+  stock-bg-circuit-board.jpg       - circuit board macro, section background
+                                     pixabay.com/photos/mother-board-electronic-electronics-5365197/
+                                     used by: about.ts (whatWeDo.background)
+  stock-bg-hospital-corridor.jpg   - empty hospital corridor, section background
+                                     pixabay.com/photos/hallway-hospital-clean-rooms-doors-5979689/
+                                     used by: about.ts (commitmentsBackground)
+
+Section backgrounds: pass `background` to <Panel>. It draws the photo under a
+white wash, so busy photos are fine - they only read as texture.
