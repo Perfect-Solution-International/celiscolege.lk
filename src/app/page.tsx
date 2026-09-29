@@ -30,20 +30,17 @@ export default function HomePage() {
       {/* Introduction */}
       <Hero />
       <Pillars />
-      <AboutBlock background="/images/bg-lab-biotech-specialist.jpg" />
+      <AboutBlock />
 
       {/* Healthcare technology, biomedical engineering, instruments, learning */}
-      <FocusAreas background="/images/bg-medical-tech-network.jpg" />
+      <FocusAreas />
 
       {/* The flagship program: Standard and Advanced */}
-      <Pathway background="/images/bg-genetic-research-dna.jpg" />
-      <InstrumentsSection background="/images/bg-analytical-chemistry-lab.jpg" />
+      <Pathway />
+      <InstrumentsSection />
 
       {/* How we teach, then where it leads */}
-      <Principles
-        title="Learn. Practice. Build."
-        background="/images/bg-smart-laboratory.jpg"
-      />
+      <Principles title="Learn. Practice. Build." />
       <CareerCertification />
 
       <Ecosystem />
