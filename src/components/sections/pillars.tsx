@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { iconMap } from "@/components/icons";
+import { Reveal } from "@/components/reveal";
 import { ArrowBadge, Container } from "@/components/ui";
 import { pillars, pillarsCta } from "@/content/home";
 
@@ -8,7 +9,10 @@ import { pillars, pillarsCta } from "@/content/home";
 export function Pillars() {
   return (
     <Container className="relative z-10 -mt-8 pb-4 sm:-mt-10">
-      <div className="glass-strong flex flex-col gap-4 rounded-[var(--radius-panel)] p-4 lg:flex-row lg:items-center">
+      <Reveal
+        delay={80}
+        className="glass-strong flex flex-col gap-4 rounded-[var(--radius-panel)] p-4 lg:flex-row lg:items-center"
+      >
         <ul className="grid flex-1 grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {pillars.map((pillar) => {
             const Icon = iconMap[pillar.icon];
@@ -37,7 +41,7 @@ export function Pillars() {
           </span>
           <ArrowBadge className="ml-auto" label={pillarsCta.title} />
         </Link>
-      </div>
+      </Reveal>
     </Container>
   );
 }

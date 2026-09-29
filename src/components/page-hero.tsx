@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 
 import { Media } from "@/components/media";
+import { Reveal } from "@/components/reveal";
 import { Button, Container } from "@/components/ui";
 
 export function PageHero({
@@ -27,7 +28,7 @@ export function PageHero({
       <div className="relative overflow-hidden rounded-[var(--radius-panel)] bg-[#071f48] shadow-[var(--shadow-panel)]">
         <div aria-hidden className="absolute -left-24 -top-40 h-96 w-96 rounded-full bg-brand/30 blur-3xl" />
         <Container className="relative grid gap-6 py-6 sm:py-7 lg:grid-cols-[minmax(0,1.05fr)_minmax(22rem,0.95fr)] lg:items-center lg:gap-10 lg:py-8">
-          <div className="py-2 sm:py-3">
+          <Reveal className="py-2 sm:py-3">
             <p className="text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-sky-300">
               {eyebrow}
             </p>
@@ -62,17 +63,19 @@ export function PageHero({
                 ) : null}
               </div>
             ) : null}
-          </div>
+          </Reveal>
 
-          <Media
-            src={image}
-            alt={imageAlt}
-            priority
-            sizes="(min-width: 1024px) 48vw, 100vw"
-            className="aspect-[16/10] w-full rounded-[1.25rem] ring-1 ring-white/15 lg:h-72 lg:aspect-auto"
-          >
-            <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-[#071f48]/45 via-transparent to-transparent" />
-          </Media>
+          <Reveal delay={150}>
+            <Media
+              src={image}
+              alt={imageAlt}
+              priority
+              sizes="(min-width: 1024px) 48vw, 100vw"
+              className="aspect-[16/10] w-full rounded-[1.25rem] ring-1 ring-white/15 lg:h-72 lg:aspect-auto"
+            >
+              <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-[#071f48]/45 via-transparent to-transparent" />
+            </Media>
+          </Reveal>
         </Container>
       </div>
     </section>

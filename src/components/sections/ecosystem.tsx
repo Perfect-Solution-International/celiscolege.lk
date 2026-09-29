@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { iconMap } from "@/components/icons";
 import { Media } from "@/components/media";
+import { Reveal } from "@/components/reveal";
 import { ArrowBadge, Button, Container, EdgeLabel } from "@/components/ui";
 import { ecosystem } from "@/content/home";
 
@@ -26,7 +27,7 @@ export function Ecosystem({
         />
 
         <Container className="relative py-16 sm:py-20 lg:py-24">
-          <div className="flex items-start justify-between gap-10">
+          <Reveal className="flex items-start justify-between gap-10">
             <div className="max-w-xl">
               <h2 className="font-display text-2xl uppercase leading-[1.35] tracking-[0.08em] text-ink sm:text-[1.75rem]">
                 {ecosystem.title}
@@ -43,9 +44,12 @@ export function Ecosystem({
               lines={ecosystem.sideLabel}
               className="hidden text-right lg:block"
             />
-          </div>
+          </Reveal>
 
-          <div className="mt-14 flex flex-col gap-4 lg:flex-row lg:items-stretch lg:justify-between">
+          <Reveal
+            delay={120}
+            className="mt-14 flex flex-col gap-4 lg:flex-row lg:items-stretch lg:justify-between"
+          >
             <ul className="glass-strong grid flex-1 grid-cols-2 gap-x-6 gap-y-5 rounded-[var(--radius-card)] px-6 py-5 sm:grid-cols-4 lg:max-w-2xl">
               {ecosystem.stats.map((stat) => {
                 const Icon = iconMap[stat.icon as keyof typeof iconMap];
@@ -72,7 +76,7 @@ export function Ecosystem({
               </span>
               <ArrowBadge className="ml-auto h-10 w-10" label={ecosystem.closing.title} />
             </Link>
-          </div>
+          </Reveal>
         </Container>
       </div>
     </section>

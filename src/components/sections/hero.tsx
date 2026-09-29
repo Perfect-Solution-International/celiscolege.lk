@@ -1,4 +1,5 @@
 import { Media } from "@/components/media";
+import { Reveal } from "@/components/reveal";
 import { Button, Container } from "@/components/ui";
 import { hero } from "@/content/home";
 
@@ -26,7 +27,7 @@ export function Hero() {
         <div aria-hidden className="absolute -left-24 -top-24 h-80 w-80 rounded-full bg-brand/30 blur-3xl" />
 
         <Container className="relative flex h-full items-center py-7 sm:py-12">
-          <div className="max-w-2xl">
+          <Reveal className="max-w-2xl">
             <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2">
               <span className="h-2 w-2 rounded-full bg-sky-300" />
               <p className="text-[0.62rem] font-semibold uppercase tracking-[0.18em] text-sky-200">
@@ -62,7 +63,7 @@ export function Hero() {
                 </li>
               ))}
             </ul>
-          </div>
+          </Reveal>
         </Container>
 
         <div className="absolute bottom-3 right-3 rounded-xl border border-white/20 bg-[#061a3d]/75 px-3 py-2.5 text-white shadow-xl backdrop-blur-md sm:bottom-6 sm:right-6 sm:px-4 sm:py-3">

@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { ComponentPropsWithoutRef, ReactNode } from "react";
 
 import { ArrowRightIcon } from "@/components/icons";
+import { Reveal } from "@/components/reveal";
 
 export function cn(...classes: (string | false | null | undefined)[]) {
   return classes.filter(Boolean).join(" ");
@@ -59,7 +60,7 @@ export function Panel({
             />
           </>
         ) : null}
-        {children}
+        <Reveal>{children}</Reveal>
       </div>
     </section>
   );
