@@ -7,6 +7,7 @@ import { Ecosystem } from "@/components/sections/ecosystem";
 import { FocusAreas } from "@/components/sections/focus-areas";
 import { Hero } from "@/components/sections/hero";
 import { InstrumentsSection } from "@/components/sections/instruments-section";
+import { LearningGallery } from "@/components/sections/learning-gallery";
 import { Pathway } from "@/components/sections/pathway";
 import { Pillars } from "@/components/sections/pillars";
 import { Principles } from "@/components/sections/principles";
@@ -41,6 +42,7 @@ export default function HomePage() {
 
       {/* How we teach, then where it leads */}
       <Principles title="Learn. Practice. Build." />
+      <LearningGallery />
       <CareerCertification />
 
       <Ecosystem />

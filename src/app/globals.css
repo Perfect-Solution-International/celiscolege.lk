@@ -148,6 +148,38 @@
     opacity: 1;
     transform: translateY(0);
   }
+
+  /* Continuous horizontal photo strip. Track holds the image list twice back
+     to back, so scrolling exactly one copy's width loops seamlessly. */
+  .marquee {
+    overflow: hidden;
+    mask-image: linear-gradient(
+      90deg,
+      transparent,
+      black 5%,
+      black 95%,
+      transparent
+    );
+  }
+
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee-scroll 45s linear infinite;
+  }
+
+  .marquee:hover .marquee-track {
+    animation-play-state: paused;
+  }
+
+  @keyframes marquee-scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

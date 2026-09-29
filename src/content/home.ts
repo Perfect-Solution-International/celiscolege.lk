@@ -106,6 +106,17 @@ export const focusAreas = {
   ],
 } as const;
 
+/** Photo gallery shown under the "Learn. Practice. Build." principles section. */
+export const learningGallery = {
+  eyebrow: "Inside CELIS College",
+  title: "Learning, in the room where it happens",
+  body: "A look at our learners and instructors at work with real medical laboratory instruments.",
+  images: Array.from({ length: 15 }, (_, i) => ({
+    src: `/images/learning-gallery/learning-gallery-${String(i + 1).padStart(2, "0")}.jpg`,
+    alt: "CELIS College learners and instructors working with medical laboratory instruments",
+  })),
+};
+
 /** Career development and certification, introduced side by side. */
 export const homeClosing = {
   career: {
