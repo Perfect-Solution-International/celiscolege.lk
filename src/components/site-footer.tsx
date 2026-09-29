@@ -113,8 +113,8 @@ export function SiteFooter() {
               <Image
                 src="/perfect-solution-international-logo.webp"
                 alt="Perfect Solution International"
-                width={2000}
-                height={503}
+                width={480}
+                height={121}
                 sizes="150px"
                 className="h-6 w-auto object-contain opacity-85 transition-opacity group-hover:opacity-100 sm:h-7"
               />

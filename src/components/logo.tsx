@@ -22,8 +22,8 @@ export function Logo({
       <Image
         src="/celis-college-logo.png"
         alt={`${site.name} logo`}
-        width={2003}
-        height={785}
+        width={560}
+        height={219}
         priority
         sizes="(max-width: 639px) 124px, (max-width: 1279px) 150px, 168px"
         className="h-auto w-[7.75rem] object-contain sm:w-[9.375rem] xl:w-[10.5rem]"
