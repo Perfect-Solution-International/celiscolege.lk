@@ -10,7 +10,6 @@ import { Button, Container, Eyebrow, Panel, SectionHeading } from "@/components/
 import {
   aboutLead,
   commitments,
-  commitmentsBackground,
   future,
   purpose,
   vision,
@@ -40,7 +39,7 @@ export default function AboutPage() {
         body={<p>{aboutLead[0]}</p>}
       />
 
-      <AboutBlock showCta={false} background="/images/bg-pharma-innovation.jpg" />
+      <AboutBlock showCta={false} />
 
       <Panel>
         <Container className="px-0 sm:px-0 lg:px-0">
@@ -70,7 +69,7 @@ export default function AboutPage() {
         </Container>
       </Panel>
 
-      <Panel background={whatWeDo.background}>
+      <Panel>
         <Container className="px-0 sm:px-0 lg:px-0">
           <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] lg:gap-14">
             <div>
@@ -125,7 +124,7 @@ export default function AboutPage() {
         </Container>
       </Panel>
 
-      <Panel background={commitmentsBackground}>
+      <Panel>
         <Container className="px-0 sm:px-0 lg:px-0">
           <SectionHeading
             eyebrow="Our Commitment"

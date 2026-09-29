@@ -64,8 +64,6 @@ export const whatWeDo = {
   ],
   closing:
     "Our programs are designed to connect fundamental engineering principles with real healthcare applications, helping learners understand both the technology and the service environment in which it operates.",
-  /** Decorative, washed-out photo behind the section. */
-  background: "/images/bg-diagnostic-imaging-tech.jpg",
 };
 
 export const vision = {
@@ -79,9 +77,6 @@ export const vision = {
   imageAlt:
     "Modern hospital operating room with a surgical light, operating table and equipment cabinets",
 };
-
-/** Decorative, washed-out photo behind the "Our Commitment" section. */
-export const commitmentsBackground = "/images/stock-bg-hospital-corridor.jpg";
 
 /** "Our Commitment" - the five things the college commits to. */
 export const commitments = [
