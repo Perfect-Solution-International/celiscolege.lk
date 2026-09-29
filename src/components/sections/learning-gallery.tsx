@@ -30,8 +30,7 @@ export function LearningGallery() {
                 alt={photo.alt}
                 accent="from-sky-200 via-blue-100 to-indigo-200"
                 className="aspect-[4/3] w-full"
-                sizes="288px"
-                priority={index === 0}
+                sizes="(min-width: 640px) 288px, 256px"
               />
             </div>
           ))}
