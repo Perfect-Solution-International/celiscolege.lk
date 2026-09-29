@@ -45,9 +45,9 @@ export const purpose = {
     "Our learning approach focuses on understanding how medical equipment works, how to identify and troubleshoot technical problems, how to approach preventive and corrective maintenance, and most importantly, how to work with healthcare technology responsibly and professionally.",
     "We aim to create an environment where learners do not simply memorize technical concepts. Instead, they are encouraged to understand, practice, troubleshoot, and continuously improve.",
   ],
-  image: "/images/celis-instrument-room.jpg",
+  image: "/images/celis-lecture-instrument-room.jpg",
   imageAlt:
-    "Laboratory instruments on the racks of the CELIS College training room in Panadura",
+    "CELIS College instructor teaching in front of laboratory instruments in the training room",
 };
 
 export const whatWeDo = {
