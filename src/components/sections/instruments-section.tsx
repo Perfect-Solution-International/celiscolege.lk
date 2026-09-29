@@ -2,9 +2,9 @@ import { InstrumentRail } from "@/components/sections/instrument-rail";
 import { Button, Container, Eyebrow, Panel } from "@/components/ui";
 import { instruments, instrumentsSection } from "@/content/instruments";
 
-export function InstrumentsSection() {
+export function InstrumentsSection({ background }: { background?: string } = {}) {
   return (
-    <Panel>
+    <Panel background={background}>
       <Container className="px-0 sm:px-0 lg:px-0">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div>

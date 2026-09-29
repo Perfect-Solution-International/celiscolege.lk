@@ -65,7 +65,7 @@ export const whatWeDo = {
   closing:
     "Our programs are designed to connect fundamental engineering principles with real healthcare applications, helping learners understand both the technology and the service environment in which it operates.",
   /** Decorative, washed-out photo behind the section. */
-  background: "/images/stock-bg-circuit-board.jpg",
+  background: "/images/bg-diagnostic-imaging-tech.jpg",
 };
 
 export const vision = {

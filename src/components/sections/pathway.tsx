@@ -7,9 +7,15 @@ import { certificate, levels, program } from "@/content/program";
 const levelIcons = [DocumentIcon, GearIcon];
 
 /** The two-level pathway graphic ending in the certificate card. */
-export function Pathway({ showCta = true }: { showCta?: boolean }) {
+export function Pathway({
+  showCta = true,
+  background,
+}: {
+  showCta?: boolean;
+  background?: string;
+}) {
   return (
-    <Panel>
+    <Panel background={background}>
       <Container className="px-0 sm:px-0 lg:px-0">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div className="max-w-2xl">

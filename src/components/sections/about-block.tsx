@@ -3,9 +3,15 @@ import { Button, Container, Panel, SectionHeading } from "@/components/ui";
 import { aboutIntro, aboutPillars } from "@/content/about";
 
 /** "About CELIS" - intro on the left, four value cards on the right. */
-export function AboutBlock({ showCta = true }: { showCta?: boolean }) {
+export function AboutBlock({
+  showCta = true,
+  background,
+}: {
+  showCta?: boolean;
+  background?: string;
+}) {
   return (
-    <Panel>
+    <Panel background={background}>
       <Container className="px-0 sm:px-0 lg:px-0">
         <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.25fr)] lg:gap-14">
           <div>

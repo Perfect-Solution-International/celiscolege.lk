@@ -5,9 +5,9 @@ import { ArrowBadge, Container, Panel, SectionHeading } from "@/components/ui";
 import { focusAreas } from "@/content/home";
 
 /** The four subject introductions: healthcare technology through to learning. */
-export function FocusAreas() {
+export function FocusAreas({ background }: { background?: string } = {}) {
   return (
-    <Panel>
+    <Panel background={background}>
       <Container className="px-0 sm:px-0 lg:px-0">
         <SectionHeading
           eyebrow={focusAreas.eyebrow}

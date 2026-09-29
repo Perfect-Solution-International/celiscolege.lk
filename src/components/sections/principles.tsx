@@ -10,12 +10,14 @@ import { principles } from "@/content/program";
 export function Principles({
   title = "Our learning pathway is built around three principles",
   cta,
+  background,
 }: {
   title?: string;
   cta?: { href: string; label: string };
+  background?: string;
 }) {
   return (
-    <Panel>
+    <Panel background={background}>
       <Container className="px-0 sm:px-0 lg:px-0">
         <SectionHeading
           eyebrow="Learn. Practice. Build."

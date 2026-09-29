@@ -40,9 +40,9 @@ export default function AboutPage() {
         body={<p>{aboutLead[0]}</p>}
       />
 
-      <AboutBlock showCta={false} />
+      <AboutBlock showCta={false} background="/images/bg-pharma-innovation.jpg" />
 
-      <Panel>
+      <Panel background="/images/bg-health-network-mission.jpg">
         <Container className="px-0 sm:px-0 lg:px-0">
           <div className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-14">
             <div>
@@ -184,8 +184,8 @@ export default function AboutPage() {
       </Panel>
 
       <Ecosystem
-        image="/images/celis-instrument-rack.jpg"
-        imageAlt="Instrument racks holding laboratory equipment in the CELIS College training room"
+        image="/images/bg-ecosystem-network.jpg"
+        imageAlt="Abstract network graphic representing a connected biomedical engineering ecosystem"
       />
       <JsonLd data={breadcrumbSchema([{ name: "About Us", path: "/about" }])} />
     </>

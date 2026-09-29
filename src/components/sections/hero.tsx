@@ -17,7 +17,7 @@ export function Hero() {
           alt={hero.imageAlt}
           priority
           sizes="100vw"
-          className="absolute inset-0 opacity-70"
+          className="absolute inset-0 opacity-20"
         />
         <div
           aria-hidden
