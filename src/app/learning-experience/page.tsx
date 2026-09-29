@@ -82,7 +82,7 @@ export default function LearningExperiencePage() {
         </Container>
       </Panel>
 
-      <Panel>
+      <Panel background="/images/bg-healthcare-icons-overlay.jpg">
         <Container className="px-0 sm:px-0 lg:px-0">
           <SectionHeading
             eyebrow="From knowledge to capability"
@@ -104,7 +104,7 @@ export default function LearningExperiencePage() {
         </Container>
       </Panel>
 
-      <Panel>
+      <Panel background="/images/bg-virtual-consultation.jpg">
         <Container className="px-0 sm:px-0 lg:px-0">
           <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:gap-14">
             <div>
@@ -172,6 +172,7 @@ export default function LearningExperiencePage() {
       <Principles
         title="Three principles behind every session"
         cta={{ href: "/contact#enquiry", label: "Ask us about joining" }}
+        background="/images/bg-hospital-corridor-blur.jpg"
       />
 
       <JsonLd

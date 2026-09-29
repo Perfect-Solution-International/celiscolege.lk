@@ -42,7 +42,7 @@ export default function AboutPage() {
 
       <AboutBlock showCta={false} background="/images/bg-pharma-innovation.jpg" />
 
-      <Panel background="/images/bg-health-network-mission.jpg">
+      <Panel>
         <Container className="px-0 sm:px-0 lg:px-0">
           <div className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-14">
             <div>

@@ -140,7 +140,7 @@ export default function ProgramPage() {
         </Container>
       </Panel>
 
-      <Panel>
+      <Panel background="/images/bg-ai-virus-research.jpg">
         <Container className="px-0 sm:px-0 lg:px-0">
           <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:gap-14">
             <div>
@@ -170,7 +170,7 @@ export default function ProgramPage() {
         </Container>
       </Panel>
 
-      <Principles />
+      <Principles background="/images/bg-cardio-heartbeat.jpg" />
 
       <section className="px-3 pb-6 sm:px-4">
         <Container>
